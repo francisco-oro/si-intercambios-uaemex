@@ -1,0 +1,14 @@
+.categories .card-step-1 {
+  min-width: 160px;
+  width: 20%;
+  box-shadow: 0 0 0 1px #DDD;
+}
+.categories .card-step-1:hover, .categories .category-selected {
+  border-color: transparent;
+  box-shadow: 0 0 0 2px #000;
+}
+.categories .category-selected {
+  background-color: #F7F7F7;
+}
+
+/*# sourceMappingURL=category-step.component.css.map */

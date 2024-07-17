@@ -1,0 +1,10 @@
+.trash-btn {
+  left: calc(100% - 70px);
+  top: 10px;
+}
+
+.container-picture {
+  width: 50%;
+}
+
+/*# sourceMappingURL=picture-step.component.css.map */
