@@ -4,9 +4,28 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="977bed1c-44ef-41ca-9dfa-0a06f2bafbab" name="Changes" comment="Added angular project for frontend">
+    <list default="true" id="977bed1c-44ef-41ca-9dfa-0a06f2bafbab" name="Changes" comment="Updated docker compose version to be used in CI/CD">
+      <change afterPath="$PROJECT_DIR$/backend/app/core/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/app/core/admin.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/app/core/apps.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/app/core/commands/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/app/core/commands/wait_for_db.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/app/core/migrations/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/app/core/models.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/app/core/tests/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/app/core/tests/test_commands.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/app/core/views.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/environment/backend.sample.env" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/environment/postgres.sample.env" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/backend/Dockerfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/app/app/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/app/app/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/backend/requirements.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/si-uaemex-frontend/src/app/landlord/properties-create/step/location-step/location-map/location-map.component.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/si-uaemex-frontend/src/app/landlord/properties-create/step/location-step/location-map/location-map.component.css.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/si-uaemex-frontend/src/app/layout/footer/footer.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/si-uaemex-frontend/src/app/layout/footer/footer.component.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/si-uaemex-frontend/src/assets/scss/airbnb-variables.scss" beforeDir="false" afterPath="$PROJECT_DIR$/si-uaemex-frontend/src/assets/scss/airbnb-variables.scss" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -68,7 +87,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "git-widget-placeholder": "main",
-    "last_opened_file_path": "/home/franciscooro/PycharmProjects/si-intercambios-uaemex/frontend/src/app/tenant/search",
+    "last_opened_file_path": "/home/franciscooro/PycharmProjects/si-intercambios-uaemex/environment",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.stylelint": "true",
     "node.js.detected.package.tslint": "true",
@@ -76,13 +95,14 @@
     "node.js.selected.package.stylelint": "",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "project.propVCSSupport.DirectoryMappings",
+    "settings.editor.selected.configurable": "preferences.lookFeel",
     "ts.external.directory.path": "/home/franciscooro/PycharmProjects/si-intercambios-uaemex/frontend/node_modules/typescript/lib",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/environment" />
       <recent name="$PROJECT_DIR$/frontend/src/app/tenant/search" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
@@ -140,7 +160,9 @@
       <workItem from="1720823671071" duration="3455000" />
       <workItem from="1721072657962" duration="1118000" />
       <workItem from="1721082500726" duration="7000" />
-      <workItem from="1721082526048" duration="17497000" />
+      <workItem from="1721082526048" duration="26512000" />
+      <workItem from="1721404769784" duration="1570000" />
+      <workItem from="1721428594255" duration="6359000" />
     </task>
     <task id="LOCAL-00001" summary="Added .flake8 for linting">
       <option name="closed" value="true" />
@@ -198,7 +220,15 @@
       <option name="project" value="LOCAL" />
       <updated>1721232998619</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Updated docker compose version to be used in CI/CD">
+      <option name="closed" value="true" />
+      <created>1721233115280</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1721233115280</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -225,7 +255,8 @@
     <MESSAGE value="Added ExtratInformation for Search Logic in navbar component" />
     <MESSAGE value="Updated searchComponent to use reactive forms" />
     <MESSAGE value="Added angular project for frontend" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added angular project for frontend" />
+    <MESSAGE value="Updated docker compose version to be used in CI/CD" />
+    <option name="LAST_COMMIT_MESSAGE" value="Updated docker compose version to be used in CI/CD" />
   </component>
   <component name="WfRunsListSearchHistory">{
   &quot;history&quot;: [

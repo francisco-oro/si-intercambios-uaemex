@@ -1,5 +1,5 @@
-FROM python:3.13-rc-alpine3.19
-LABEL mantainer="phionira.com"
+FROM python:3.9-alpine3.13
+LABEL mantainer="jonamk1"
 
 ENV PYTHONUNBUFFERED 1
 
@@ -13,6 +13,9 @@ EXPOSE 8000
 ARG DEV="false"
 RUN python -m venv /pyenvironment && \
     /pyenvironment/bin/pip install --upgrade pip && \
+        apk add --update --no-cache postgresql-client && \
+        apk add --update --no-cache --virtual .tmp-build-deps \
+          build-base postgresql-dev musl-dev && \
     /pyenvironment/bin/pip install -r /temp/requirements.txt && \
     if [ $DEV = "true" ]; then \
      /pyenvironment/bin/pip install -r /temp/requirements.dev.txt ; \
