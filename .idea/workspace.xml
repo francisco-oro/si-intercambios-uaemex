@@ -4,10 +4,26 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="977bed1c-44ef-41ca-9dfa-0a06f2bafbab" name="Changes" comment="Updated README.md">
+    <list default="true" id="977bed1c-44ef-41ca-9dfa-0a06f2bafbab" name="Changes" comment="Fixed docker compose to be executed on Github Actions">
+      <change afterPath="$PROJECT_DIR$/backend/app/core/management/commands/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/app/core/management/commands/wait_for_db.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/app/core/migrations/0001_initial.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/app/core/tests/test_models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.github/workflows/checks-backend.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/checks-backend.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/app/.flake8" beforeDir="false" afterPath="$PROJECT_DIR$/backend/app/.flake8" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/app/app/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/app/app/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/app/core/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/app/core/admin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/app/core/commands/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/app/core/management/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/app/core/commands/wait_for_db.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/app/core/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/app/core/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/app/core/tests/test_commands.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/app/core/tests/test_commands.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/app/decorators.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
     </list>
+    <list id="b2c03f22-6f8f-4e70-a104-b915ec4131fd" name="Changes by jonamk1" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -68,12 +84,13 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Django tests.Test: core.tests.test_commands.CommandsTests.test_wait_for_db_ready.executor": "Run",
     "RunOnceActivity.OpenDjangoStructureViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.pycharm.django.structure.promotion.once.per.project": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "git-widget-placeholder": "main",
-    "last_opened_file_path": "/home/franciscooro/PycharmProjects/si-intercambios-uaemex/environment",
+    "last_opened_file_path": "/home/franciscooro/PycharmProjects/si-intercambios-uaemex/backend/Dockerfile",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.stylelint": "true",
     "node.js.detected.package.tslint": "true",
@@ -81,7 +98,7 @@
     "node.js.selected.package.stylelint": "",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "preferences.lookFeel",
+    "settings.editor.selected.configurable": "Errors",
     "ts.external.directory.path": "/home/franciscooro/PycharmProjects/si-intercambios-uaemex/frontend/node_modules/typescript/lib",
     "vue.rearranger.settings.migration": "true"
   }
@@ -92,14 +109,35 @@
       <recent name="$PROJECT_DIR$/frontend/src/app/tenant/search" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/backend/app/core/management" />
       <recent name="$PROJECT_DIR$/backend" />
       <recent name="$PROJECT_DIR$/frontend/src/assets/img" />
       <recent name="$PROJECT_DIR$/.github/workflows" />
       <recent name="$PROJECT_DIR$/backend/app" />
-      <recent name="$PROJECT_DIR$" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Django tests.Test: core.tests.test_commands.CommandsTests.test_wait_for_db_ready">
+    <configuration name="Test: core.tests.test_commands.CommandsTests.test_wait_for_db_ready" type="DjangoTestsConfigurationType" temporary="true">
+      <module name="si-intercambios-uaemex" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="TARGET" value="core.tests.test_commands.CommandsTests.test_wait_for_db_ready" />
+      <option name="SETTINGS_FILE" value="" />
+      <option name="CUSTOM_SETTINGS" value="false" />
+      <option name="USE_OPTIONS" value="false" />
+      <option name="OPTIONS" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="si-intercambios-uaemex" type="Python.DjangoServer" factoryName="Django server">
       <module name="si-intercambios-uaemex" />
       <option name="ENV_FILES" value="" />
@@ -124,6 +162,11 @@
       <option name="customRunCommand" value="" />
       <method v="2" />
     </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Django tests.Test: core.tests.test_commands.CommandsTests.test_wait_for_db_ready" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
@@ -149,7 +192,7 @@
       <workItem from="1721082526048" duration="26512000" />
       <workItem from="1721404769784" duration="1570000" />
       <workItem from="1721428594255" duration="11731000" />
-      <workItem from="1721679042461" duration="3193000" />
+      <workItem from="1721679042461" duration="10202000" />
     </task>
     <task id="LOCAL-00001" summary="Added .flake8 for linting">
       <option name="closed" value="true" />
@@ -239,7 +282,15 @@
       <option name="project" value="LOCAL" />
       <updated>1721682037853</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="Fixed docker compose to be executed on Github Actions">
+      <option name="closed" value="true" />
+      <created>1721682257783</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1721682257783</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -270,10 +321,15 @@
     <MESSAGE value="Created WaitForDb command" />
     <MESSAGE value="Added docs for development setup" />
     <MESSAGE value="Updated README.md" />
-    <option name="LAST_COMMIT_MESSAGE" value="Updated README.md" />
+    <MESSAGE value="Fixed docker compose to be executed on Github Actions" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixed docker compose to be executed on Github Actions" />
   </component>
   <component name="WfRunsListSearchHistory">{
   &quot;history&quot;: [
+    {
+      &quot;branch&quot;: &quot;main&quot;,
+      &quot;currentBranchFilter&quot;: true
+    },
     {
       &quot;branch&quot;: &quot;main&quot;,
       &quot;currentBranchFilter&quot;: true
@@ -288,4 +344,7 @@
     &quot;currentBranchFilter&quot;: true
   }
 }</component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/si_intercambios_uaemex$Test__core_tests_test_commands_CommandsTests_test_wait_for_db_ready.coverage" NAME="Test: core.tests.test_commands.CommandsTests.test_wait_for_db_ready Coverage Results" MODIFIED="1721688875856" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+  </component>
 </project>
