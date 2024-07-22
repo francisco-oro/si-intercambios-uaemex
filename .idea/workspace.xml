@@ -4,12 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="977bed1c-44ef-41ca-9dfa-0a06f2bafbab" name="Changes" comment="Created WaitForDb command">
-      <change afterPath="$PROJECT_DIR$/backend/app/decorators.py" afterDir="false" />
+    <list default="true" id="977bed1c-44ef-41ca-9dfa-0a06f2bafbab" name="Changes" comment="Updated README.md">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/app/app/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/app/app/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/app/core/tests/test_commands.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/app/core/tests/test_commands.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -153,7 +149,7 @@
       <workItem from="1721082526048" duration="26512000" />
       <workItem from="1721404769784" duration="1570000" />
       <workItem from="1721428594255" duration="11731000" />
-      <workItem from="1721679042461" duration="2900000" />
+      <workItem from="1721679042461" duration="3193000" />
     </task>
     <task id="LOCAL-00001" summary="Added .flake8 for linting">
       <option name="closed" value="true" />
@@ -227,7 +223,23 @@
       <option name="project" value="LOCAL" />
       <updated>1721435233466</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Added docs for development setup">
+      <option name="closed" value="true" />
+      <created>1721681957112</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1721681957112</updated>
+    </task>
+    <task id="LOCAL-00011" summary="Updated README.md">
+      <option name="closed" value="true" />
+      <created>1721682037853</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1721682037853</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -256,7 +268,9 @@
     <MESSAGE value="Added angular project for frontend" />
     <MESSAGE value="Updated docker compose version to be used in CI/CD" />
     <MESSAGE value="Created WaitForDb command" />
-    <option name="LAST_COMMIT_MESSAGE" value="Created WaitForDb command" />
+    <MESSAGE value="Added docs for development setup" />
+    <MESSAGE value="Updated README.md" />
+    <option name="LAST_COMMIT_MESSAGE" value="Updated README.md" />
   </component>
   <component name="WfRunsListSearchHistory">{
   &quot;history&quot;: [

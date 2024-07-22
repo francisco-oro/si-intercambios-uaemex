@@ -12,8 +12,14 @@ services:
       - ./backend/app:/app
     command: >
       sh -c "python manage.py runserver 0.0.0.0:8000"
-    env_file:
-      - ./environment/backend.env
+#    env_file:
+#      - ./environment/backend.env
+    environment:
+      - DB_HOST=app-db
+      - DB_NAME=dev-db
+      - DB_USER=django-dev
+      - DB_PASSWORD=example123
+      - DB_PORT=5432
     depends_on:
       - app-db
   
@@ -23,8 +29,12 @@ services:
       - "6000:5432"
     volumes:
       - app-db-data:/var/lib/postgresql/data
-    env_file:
-      - ./environment/postgres.env
+#    env_file:
+#      - ./environment/postgres.env
+    environment:
+      - POSTGRES_PASSWORD=example123
+      - POSTGRES_DB=dev-db
+      - POSTGRES_USER=django-dev
     restart: always
 volumes:
   app-db-data:
