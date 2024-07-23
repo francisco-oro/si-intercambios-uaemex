@@ -35,6 +35,11 @@ Head to `localhost:3000` in your browser to display the frontend app
 ```shell
 docker compose run --rm backend sh -c "python manage.py test"
 ```
+# Linting
+
+```shell
+docker compose run --rm backend sh -c "flake8"
+```
 
 
 # Production Setup

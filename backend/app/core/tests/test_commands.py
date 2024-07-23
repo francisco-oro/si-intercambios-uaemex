@@ -16,13 +16,9 @@ class CommandsTests(SimpleTestCase):
     
     def test_wait_for_db_ready(self, mock_check):
         """Test waiting for db ready."""
-        
         mock_check.return_value = True
-        
         call_command('wait_for_db')
-        
         mock_check.assert_called_once_with(databases=['default'])
-        
     @patch('time.sleep')
     def test_wait_for_db_delay(self, mock_sleep, mock_check):
         """Test waiting for database when getting OperationalError"""

@@ -4,16 +4,19 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="977bed1c-44ef-41ca-9dfa-0a06f2bafbab" name="Changes" comment="Added Admin Site Tests">
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+    <list default="true" id="977bed1c-44ef-41ca-9dfa-0a06f2bafbab" name="Changes" comment="Fixed user creation migrations to avoid creating a username for each user">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/si-intercambios-uaemex.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/si-intercambios-uaemex.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/app/app/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/app/app/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/app/app/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/app/app/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/app/core/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/app/core/admin.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/app/core/migrations/0001_initial.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/app/core/migrations/0002_alter_user_date_of_birth.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/app/core/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/app/core/models.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/app/core/tests/test_admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/app/core/tests/test_admin.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/app/core/tests/test_models.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/app/core/tests/test_models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/backend/requirements.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -99,7 +102,7 @@
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
     "run.code.analysis.last.selected.profile": "aDefault",
-    "settings.editor.selected.configurable": "Errors",
+    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable",
     "ts.external.directory.path": "/home/franciscooro/PycharmProjects/si-intercambios-uaemex/si-uaemex-frontend/node_modules/typescript/lib",
     "vue.rearranger.settings.migration": "true"
   },
@@ -224,7 +227,7 @@
       <workItem from="1721755243434" duration="352000" />
       <workItem from="1721755616984" duration="317000" />
       <workItem from="1721755969558" duration="581000" />
-      <workItem from="1721756653677" duration="10989000" />
+      <workItem from="1721756653677" duration="13708000" />
     </task>
     <task id="LOCAL-00001" summary="Added .flake8 for linting">
       <option name="closed" value="true" />
@@ -338,7 +341,23 @@
       <option name="project" value="LOCAL" />
       <updated>1721762873485</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="Fixed user creation migrations to avoid creating a username for each user">
+      <option name="closed" value="true" />
+      <created>1721770247653</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1721770247653</updated>
+    </task>
+    <task id="LOCAL-00016" summary="Fixed user creation migrations to avoid creating a username for each user">
+      <option name="closed" value="true" />
+      <created>1721770253642</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1721770253642</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -372,7 +391,8 @@
     <MESSAGE value="Fixed docker compose to be executed on Github Actions" />
     <MESSAGE value="Added user model" />
     <MESSAGE value="Added Admin Site Tests" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added Admin Site Tests" />
+    <MESSAGE value="Fixed user creation migrations to avoid creating a username for each user" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixed user creation migrations to avoid creating a username for each user" />
   </component>
   <component name="WfRunsListSearchHistory">{
   &quot;history&quot;: [
