@@ -4,12 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="977bed1c-44ef-41ca-9dfa-0a06f2bafbab" name="Changes" comment="Added Swagger and Drf spectacular for OpenAPI integration">
+    <list default="true" id="977bed1c-44ef-41ca-9dfa-0a06f2bafbab" name="Changes" comment="Lint fixes">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/app/core/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/app/core/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/app/core/tests/test_commands.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/app/core/tests/test_commands.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/app/core/tests/test_models.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/app/core/tests/test_models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/app/core/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/app/core/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/app/core/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/app/core/admin.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -50,12 +47,12 @@
     &quot;assignee&quot;: &quot;francisco-oro&quot;
   }
 }</component>
-  <component name="GithubPullRequestsUISettings">{
-  &quot;selectedUrlAndAccountId&quot;: {
-    &quot;url&quot;: &quot;https://github.com/francisco-oro/si-intercambios-uaemex.git&quot;,
-    &quot;accountId&quot;: &quot;0f8fa0be-0178-48fa-bf46-8d778b3a17b4&quot;
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/francisco-oro/si-intercambios-uaemex.git",
+    "accountId": "08bddb9e-d8b0-41be-985d-a79797167e41"
   }
-}</component>
+}]]></component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$USER_HOME$/.cache/JetBrains/PyCharm2024.1/remote_sources/-790739215/-853142959/unittest/mock.py" root0="SKIP_INSPECTION" />
     <setting file="file://$USER_HOME$/.cache/JetBrains/PyCharm2024.1/remote_sources/-790739215/545756923/django/core/management/base.py" root0="SKIP_INSPECTION" />
@@ -198,7 +195,7 @@
       <workItem from="1721755243434" duration="352000" />
       <workItem from="1721755616984" duration="317000" />
       <workItem from="1721755969558" duration="581000" />
-      <workItem from="1721756653677" duration="14303000" />
+      <workItem from="1721756653677" duration="15017000" />
     </task>
     <task id="LOCAL-00001" summary="Added .flake8 for linting">
       <option name="closed" value="true" />
@@ -336,7 +333,15 @@
       <option name="project" value="LOCAL" />
       <updated>1721772987862</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="Lint fixes">
+      <option name="closed" value="true" />
+      <created>1721773520099</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1721773520099</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -372,7 +377,8 @@
     <MESSAGE value="Added Admin Site Tests" />
     <MESSAGE value="Fixed user creation migrations to avoid creating a username for each user" />
     <MESSAGE value="Added Swagger and Drf spectacular for OpenAPI integration" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added Swagger and Drf spectacular for OpenAPI integration" />
+    <MESSAGE value="Lint fixes" />
+    <option name="LAST_COMMIT_MESSAGE" value="Lint fixes" />
   </component>
   <component name="WfRunsListSearchHistory">{
   &quot;history&quot;: [
