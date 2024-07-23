@@ -10,6 +10,7 @@ from django.db.utils import IntegrityError
 
 from psycopg2.errors import UniqueViolation
 
+
 class AdminSiteTests(TestCase):
     """Tests for admin site."""
 
@@ -17,21 +18,22 @@ class AdminSiteTests(TestCase):
         """Create user and client"""
         try:
             self.client = Client()
-            with transaction.atomic():
-                self.admin_user = get_user_model().objects.create_superuser(
-                    email='admin@example.com',
-                    password='testpass123',
-                    account='1712231'
-                )
+            self.admin_user = get_user_model().objects.create_superuser(
+                email='admin@example.com',
+                password='testpass123',
+                account='1812231'
+            )
 
             self.client.force_login(self.admin_user)
             self.user = get_user_model().objects.create_user(
                 email='user@example.com',
                 password='testpass123',
-                account='1712232'
+                account='1812232'
             )
+
         except (IntegrityError, UniqueViolation):
             print("User already exists.")
+
 
     def test_users_listed(self):
         """Test that users are listed on user page."""
@@ -40,3 +42,9 @@ class AdminSiteTests(TestCase):
 
         self.assertContains(res, self.user.account)
         self.assertContains(res, self.user.email)
+
+    def test_edit_user_page(self):
+        """Test that the user edit page works."""
+        url = reverse('admin:core_user_change', args=[self.user.id])
+        res = self.client.get(url)
+        self.assertEqual(res.status_code, 200)

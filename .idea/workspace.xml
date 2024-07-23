@@ -4,15 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="977bed1c-44ef-41ca-9dfa-0a06f2bafbab" name="Changes" comment="Added user model">
-      <change afterPath="$PROJECT_DIR$/backend/app/core/tests/test_admin.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/si-intercambios-uaemex.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/si-intercambios-uaemex.iml" afterDir="false" />
+    <list default="true" id="977bed1c-44ef-41ca-9dfa-0a06f2bafbab" name="Changes" comment="Added Admin Site Tests">
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/app/core/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/app/core/admin.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/app/core/management/commands/wait_for_db.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/app/core/management/commands/wait_for_db.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/app/core/migrations/0001_initial.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/app/core/migrations/0002_alter_user_date_of_birth.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/app/core/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/app/core/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/app/core/tests/test_admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/app/core/tests/test_admin.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/app/core/tests/test_models.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/app/core/tests/test_models.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -64,6 +64,11 @@
     <setting file="file://$USER_HOME$/.cache/JetBrains/PyCharm2024.1/remote_sources/-790739215/-853142959/unittest/mock.py" root0="SKIP_INSPECTION" />
     <setting file="file://$USER_HOME$/.cache/JetBrains/PyCharm2024.1/remote_sources/-790739215/545756923/django/core/management/base.py" root0="SKIP_INSPECTION" />
   </component>
+  <component name="JsbtTreeLayoutManager">
+    <layout place="tools.popupGrunt">
+      <scroll-view-position x="0" y="0" />
+    </layout>
+  </component>
   <component name="ProblemsViewState">
     <option name="selectedTabId" value="ProjectErrors" />
   </component>
@@ -79,6 +84,7 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "Django tests.Test: core.tests.test_commands.CommandsTests.test_wait_for_db_ready.executor": "Run",
+    "Django tests.Test: core.tests.test_models.ModelTests.test_new_user_email_normalized.executor": "Run",
     "RunOnceActivity.OpenDjangoStructureViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.pycharm.django.structure.promotion.once.per.project": "true",
@@ -96,6 +102,11 @@
     "settings.editor.selected.configurable": "Errors",
     "ts.external.directory.path": "/home/franciscooro/PycharmProjects/si-intercambios-uaemex/si-uaemex-frontend/node_modules/typescript/lib",
     "vue.rearranger.settings.migration": "true"
+  },
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "postgresql"
+    ]
   }
 }]]></component>
   <component name="RecentsManager">
@@ -111,7 +122,7 @@
       <recent name="$PROJECT_DIR$/backend/app" />
     </key>
   </component>
-  <component name="RunManager" selected="Django Server.si-intercambios-uaemex">
+  <component name="RunManager" selected="Django tests.Test: core.tests.test_models.ModelTests.test_new_user_email_normalized">
     <configuration name="Test: core.tests.test_commands.CommandsTests.test_wait_for_db_ready" type="DjangoTestsConfigurationType" temporary="true">
       <module name="si-intercambios-uaemex" />
       <option name="ENV_FILES" value="" />
@@ -127,6 +138,27 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="TARGET" value="core.tests.test_commands.CommandsTests.test_wait_for_db_ready" />
+      <option name="SETTINGS_FILE" value="" />
+      <option name="CUSTOM_SETTINGS" value="false" />
+      <option name="USE_OPTIONS" value="false" />
+      <option name="OPTIONS" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Test: core.tests.test_models.ModelTests.test_new_user_email_normalized" type="DjangoTestsConfigurationType" temporary="true">
+      <module name="si-intercambios-uaemex" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="TARGET" value="core.tests.test_models.ModelTests.test_new_user_email_normalized" />
       <option name="SETTINGS_FILE" value="" />
       <option name="CUSTOM_SETTINGS" value="false" />
       <option name="USE_OPTIONS" value="false" />
@@ -159,6 +191,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Django tests.Test: core.tests.test_models.ModelTests.test_new_user_email_normalized" />
         <item itemvalue="Django tests.Test: core.tests.test_commands.CommandsTests.test_wait_for_db_ready" />
       </list>
     </recent_temporary>
@@ -191,7 +224,7 @@
       <workItem from="1721755243434" duration="352000" />
       <workItem from="1721755616984" duration="317000" />
       <workItem from="1721755969558" duration="581000" />
-      <workItem from="1721756653677" duration="4423000" />
+      <workItem from="1721756653677" duration="10989000" />
     </task>
     <task id="LOCAL-00001" summary="Added .flake8 for linting">
       <option name="closed" value="true" />
@@ -297,7 +330,15 @@
       <option name="project" value="LOCAL" />
       <updated>1721689287899</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="Added Admin Site Tests">
+      <option name="closed" value="true" />
+      <created>1721762873485</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1721762873485</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -330,7 +371,8 @@
     <MESSAGE value="Updated README.md" />
     <MESSAGE value="Fixed docker compose to be executed on Github Actions" />
     <MESSAGE value="Added user model" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added user model" />
+    <MESSAGE value="Added Admin Site Tests" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added Admin Site Tests" />
   </component>
   <component name="WfRunsListSearchHistory">{
   &quot;history&quot;: [
@@ -353,6 +395,7 @@
   }
 }</component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/si_intercambios_uaemex$Test__core_tests_test_models_ModelTests_test_new_user_email_normalized.coverage" NAME="Test: core.tests.test_models.ModelTests.test_new_user_email_normalized Coverage Results" MODIFIED="1721769895304" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
     <SUITE FILE_PATH="coverage/si_intercambios_uaemex$Test__core_tests_test_commands_CommandsTests_test_wait_for_db_ready.coverage" NAME="Test: core.tests.test_commands.CommandsTests.test_wait_for_db_ready Coverage Results" MODIFIED="1721688875856" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
   </component>
 </project>

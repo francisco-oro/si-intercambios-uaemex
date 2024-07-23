@@ -14,6 +14,11 @@ class UserManager(BaseUserManager):
     """Manager for user."""
     def create_user(self, account, password=None, **extra_fields):
         """Create, save and return a new user."""
+        email = extra_fields.get('email', None)
+        if not email:
+            raise ValueError('Users must have an email address')
+        extra_fields['email'] = self.normalize_email(email)
+
         user = self.model(account=account, **extra_fields)
         user.set_password(password)
         user.save(using=self._db)
@@ -50,5 +55,3 @@ class User(AbstractUser, PermissionsMixin):
     USERNAME_FIELD = 'account'
     REQUIRED_FIELDS = ['email']
 
-
-# https://django-improved-user.readthedocs.io/en/stable/create_custom_user_with_mixins.html

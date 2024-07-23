@@ -5,12 +5,12 @@ Sistema de intercambios - UAEMéx
 
 ## Getting Started - Perform & Apply migrations 
 ```shell
-docker compose run app-db --rm sh -c "python manage.py make migrations && python manage.py migrate"
+docker compose run --rm backend sh -c "python manage.py make migrations && python manage.py migrate"
 ```
 
 ## Getting Started - CreateSuperuser
 ```shell
-docker compose run app-db --rm -it sh -c "python manage.py createsuperuser"
+docker compose run --rm -it backend sh -c "python manage.py createsuperuser"
 ```
 
 Now, head to `0.0.0.0:8000` and provide your credentials to log-in
