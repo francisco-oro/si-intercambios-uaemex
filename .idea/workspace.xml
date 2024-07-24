@@ -4,9 +4,20 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="977bed1c-44ef-41ca-9dfa-0a06f2bafbab" name="Changes" comment="Lint fixes">
+    <list default="true" id="977bed1c-44ef-41ca-9dfa-0a06f2bafbab" name="Changes" comment="Fixed Schema for user creation page">
+      <change afterPath="$PROJECT_DIR$/backend/app/user/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/app/user/admin.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/app/user/apps.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/app/user/migrations/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/app/user/models.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/app/user/serializers.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/app/user/tests/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/app/user/tests/test_user_api.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/app/user/urls.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/app/user/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/app/core/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/app/core/admin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/app/app/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/app/app/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/app/app/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/app/app/urls.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,12 +58,12 @@
     &quot;assignee&quot;: &quot;francisco-oro&quot;
   }
 }</component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/francisco-oro/si-intercambios-uaemex.git",
-    "accountId": "08bddb9e-d8b0-41be-985d-a79797167e41"
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/francisco-oro/si-intercambios-uaemex.git&quot;,
+    &quot;accountId&quot;: &quot;08bddb9e-d8b0-41be-985d-a79797167e41&quot;
   }
-}]]></component>
+}</component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$USER_HOME$/.cache/JetBrains/PyCharm2024.1/remote_sources/-790739215/-853142959/unittest/mock.py" root0="SKIP_INSPECTION" />
     <setting file="file://$USER_HOME$/.cache/JetBrains/PyCharm2024.1/remote_sources/-790739215/545756923/django/core/management/base.py" root0="SKIP_INSPECTION" />
@@ -74,34 +85,34 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Django tests.Test: core.tests.test_commands.CommandsTests.test_wait_for_db_ready.executor": "Run",
-    "Django tests.Test: core.tests.test_models.ModelTests.test_new_user_email_normalized.executor": "Run",
-    "RunOnceActivity.OpenDjangoStructureViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.pycharm.django.structure.promotion.once.per.project": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "main",
-    "last_opened_file_path": "/home/franciscooro/PycharmProjects/si-intercambios-uaemex",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.stylelint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.stylelint": "",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "run.code.analysis.last.selected.profile": "aDefault",
-    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable",
-    "ts.external.directory.path": "/home/franciscooro/PycharmProjects/si-intercambios-uaemex/si-uaemex-frontend/node_modules/typescript/lib",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Django tests.Test: core.tests.test_commands.CommandsTests.test_wait_for_db_ready.executor&quot;: &quot;Run&quot;,
+    &quot;Django tests.Test: core.tests.test_models.ModelTests.test_new_user_email_normalized.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.OpenDjangoStructureViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.pycharm.django.structure.promotion.once.per.project&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/franciscooro/PycharmProjects/si-intercambios-uaemex&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.stylelint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.stylelint&quot;: &quot;&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;run.code.analysis.last.selected.profile&quot;: &quot;aDefault&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;/home/franciscooro/PycharmProjects/si-intercambios-uaemex/si-uaemex-frontend/node_modules/typescript/lib&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "DatabaseDriversLRU": [
-      "postgresql"
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;postgresql&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/environment" />
@@ -195,7 +206,9 @@
       <workItem from="1721755243434" duration="352000" />
       <workItem from="1721755616984" duration="317000" />
       <workItem from="1721755969558" duration="581000" />
-      <workItem from="1721756653677" duration="15017000" />
+      <workItem from="1721756653677" duration="15986000" />
+      <workItem from="1721834876338" duration="1921000" />
+      <workItem from="1721859303512" duration="3163000" />
     </task>
     <task id="LOCAL-00001" summary="Added .flake8 for linting">
       <option name="closed" value="true" />
@@ -341,7 +354,15 @@
       <option name="project" value="LOCAL" />
       <updated>1721773520099</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="Fixed Schema for user creation page">
+      <option name="closed" value="true" />
+      <created>1721774240465</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1721774240465</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -378,7 +399,8 @@
     <MESSAGE value="Fixed user creation migrations to avoid creating a username for each user" />
     <MESSAGE value="Added Swagger and Drf spectacular for OpenAPI integration" />
     <MESSAGE value="Lint fixes" />
-    <option name="LAST_COMMIT_MESSAGE" value="Lint fixes" />
+    <MESSAGE value="Fixed Schema for user creation page" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixed Schema for user creation page" />
   </component>
   <component name="WfRunsListSearchHistory">{
   &quot;history&quot;: [
