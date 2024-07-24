@@ -24,3 +24,5 @@ class UserSerializer(serializers.ModelSerializer):
     def create(self, validated_data):
         """Create and return a new user with hashed password."""
         return get_user_model().objects.create_user(**validated_data)
+
+# https://www.django-rest-framework.org/api-guide/serializers/
