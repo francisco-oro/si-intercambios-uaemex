@@ -35,6 +35,60 @@ class PublicUserApiTests(TestCase):
         self.assertTrue(user.check_password(payload['password']))
         self.assertNotIn('password', res.data)
 
+    def test_create_valid_user_with_full_payload_success(self):
+        """Test creating a user with full and valid payload is successful."""
+        payload = {
+            'username': '1723394',
+            'email': 'test@example.com',
+            'password': 'testpass123',
+            'name': 'Test',
+            'last_name1' : 'Test',
+            'last_name2' : 'Test',
+            'CURP': 'XAXX010101XAXAXA00',
+            'gender': 'M',
+            'date_of_birth': '01-01-1990',
+        }
+        res = self.client.post(CREATE_USER_URL, payload)
+        self.assertEqual(res.status_code, status.HTTP_201_CREATED)
+        user = get_user_model().objects.get(username=payload['username'])
+        self.assertTrue(user.check_password(payload['password']))
+        self.assertNotIn('password', res.data)
+
+    def test_create_valid_user_with_full_payload_invalid_CURP_fails(self):
+        """"Test creating a user with an invalid CURP fails """
+        payload = {
+            'username': '1723394',
+            'email': 'test@example.com',
+            'password': 'testpass123',
+            'name': 'Test',
+            'last_name1' : 'Test',
+            'last_name2' : 'Test',
+            'CURP': 'XAXX01010AXAXA00',
+            'gender': 'M',
+            'date_of_birth': '01-01-1990',
+        }
+        res = self.client.post(CREATE_USER_URL, payload)
+        self.assertEqual(res.status_code, status.HTTP_400_BAD_REQUEST)
+
+    def test_create_user_invalid_username_error(self):
+        """Test creating a user with a username longer or shorter than 7 characters throws an error."""
+        payload_1 = {
+            'username': '172333',
+            'email': 'test@example.com',
+            'password': 'testpass123',
+            'name': 'Test'
+        }
+        payload_2 = {
+            'username': '172323233',
+            'email': 'test@example.com',
+            'password': 'testpass123',
+            'name': 'Test'
+        }
+        res_1 = self.client.post(CREATE_USER_URL, payload_1)
+        res_2 = self.client.post(CREATE_USER_URL, payload_2)
+        self.assertEqual(res_1.status_code, status.HTTP_400_BAD_REQUEST)
+        self.assertEqual(res_2.status_code, status.HTTP_400_BAD_REQUEST)
+
     def test_create_user_username_already_exists_error(self):
         """Test creating a user that already exists fails."""
         payload = {
