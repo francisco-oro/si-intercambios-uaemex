@@ -2,6 +2,7 @@ import uuid
 from django.db import models
 from django.dispatch import receiver
 from django.contrib.auth.models import AbstractUser
+from django.db.models.signals import post_save
 from rest_framework_simplejwt.tokens import RefreshToken
 from easy_thumbnails.fields import ThumbnailerImageField
 from django.urls import reverse
@@ -34,14 +35,10 @@ class User(AbstractUser):
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
     profile_picture = ThumbnailerImageField('ProfilePicture', upload_to='profile_pictures/', blank=True, null=True)
     username = models.CharField(max_length=10, unique=True, default="")
-    CURP = models.CharField(max_length=20)
     email = models.EmailField(unique=True)  # VARCHAR
-    name = models.CharField(max_length=255)
-    last_name1 = models.CharField(max_length=255)
+    first_name = models.CharField(max_length=255)
+    last_name = models.CharField(max_length=255)
     last_name2 = models.CharField(max_length=255)
-    gender = models.CharField(max_length=10)
-    date_of_birth = models.DateField(null=True, blank=True)
-    city = models.CharField(max_length=255)
 
     is_active = models.BooleanField(default=True)
     is_staff = models.BooleanField(default=False)
@@ -57,5 +54,24 @@ class User(AbstractUser):
     def __str__(self):
         return self.username + self.name
 
+
+class Profile(models.Model):
+    """Profile model for student details"""
+    user = models.OneToOneField(User, on_delete=models.CASCADE)
+    CURP = models.CharField(max_length=20)
+    gender = models.CharField(max_length=10)
+    date_of_birth = models.DateField(null=True, blank=True)
+    city = models.CharField(max_length=255)
+    zip_code = models.CharField(max_length=30)
+
+@receiver(post_save, sender=User)
+def create_user_profile(sender, instance, created, **kwargs):
+    if created:
+        Profile.objects.create(user=instance)
+
+
+@receiver(post_save, sender=User)
+def save_user_profile(sender, instance, **kwargs):
+    instance.profile.save()
 
 saved_file.connect(generate_aliases_global)
