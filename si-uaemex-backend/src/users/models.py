@@ -52,7 +52,7 @@ class User(AbstractUser):
         }
 
     def __str__(self):
-        return self.username + self.name
+        return self.username + self.first_name
 
 
 class Profile(models.Model):
@@ -63,6 +63,9 @@ class Profile(models.Model):
     date_of_birth = models.DateField(null=True, blank=True)
     city = models.CharField(max_length=255)
     zip_code = models.CharField(max_length=30)
+
+    def __str__(self):
+        return self.user.username + ' ' + self.user.last_name
 
 @receiver(post_save, sender=User)
 def create_user_profile(sender, instance, created, **kwargs):
