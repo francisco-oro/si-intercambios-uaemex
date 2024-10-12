@@ -27,20 +27,4 @@ class UserAdmin(UserAdmin):
 
 @admin.register(Profile)
 class ProfileAdmin(admin.ModelAdmin):
-
-    fieldsets = (
-        (None, {'fields': ('CURP', 'gender')}),
-        (
-            _('Profile info'),
-            {
-                'fields': (
-                    'CURP',
-                    'user',
-                    'gender',
-                )
-            },
-        ),
-        (_('Profile image'), {'fields': ('profile_picture',)}),
-        (_('Permissions'), {'fields': ('is_active', 'is_staff', 'is_superuser', 'groups', 'user_permissions')}),
-        (_('Important dates'), {'fields': ('last_login', 'date_joined')}),
-    )
+    pass

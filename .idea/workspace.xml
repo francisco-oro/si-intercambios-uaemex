@@ -4,7 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="977bed1c-44ef-41ca-9dfa-0a06f2bafbab" name="Changes" comment="Added hints for user serializer" />
+    <list default="true" id="977bed1c-44ef-41ca-9dfa-0a06f2bafbab" name="Changes" comment="Added hints for user serializer">
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/75d337a8-3e09-42a0-9206-c3fdc5ad2b6f.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/si-uaemex-backend/src/users/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/si-uaemex-backend/src/users/admin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/si-uaemex-backend/src/users/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/si-uaemex-backend/src/users/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/si-uaemex-backend/src/users/serializers.py" beforeDir="false" afterPath="$PROJECT_DIR$/si-uaemex-backend/src/users/serializers.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/si-uaemex-backend/src/users/test/test_serializers.py" beforeDir="false" afterPath="$PROJECT_DIR$/si-uaemex-backend/src/users/test/test_serializers.py" afterDir="false" />
+    </list>
+    <list id="03360c8a-5c72-4da7-be92-a18dd2c7d294" name="Changes by jonamk1" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -80,7 +89,7 @@
     "RunOnceActivity.pycharm.django.structure.promotion.once.per.project": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "git-widget-placeholder": "main",
-    "last_opened_file_path": "/home/franciscooro/PycharmProjects/si-intercambios-uaemex/si-uaemex-backend",
+    "last_opened_file_path": "/home/franciscooro/PycharmProjects/si-intercambios-uaemex/si-uaemex-backend/docker-compose.yml",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.stylelint": "true",
     "node.js.detected.package.tslint": "true",
