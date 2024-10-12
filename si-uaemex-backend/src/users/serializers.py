@@ -1,4 +1,5 @@
 from rest_framework import serializers
+from rest_framework.validators import ValidationError
 from datetime import date
 from dateutil.relativedelta import relativedelta
 from src.users.models import User, Profile
@@ -88,9 +89,11 @@ class ProfileSerializer(serializers.ModelSerializer):
         return value
 
     def create(self, validated_data):
-        user = self.context['request'].user
+        user = self.context.get('user')
+        if not user:
+            raise serializers.ValidationError('El usuario es obligatorio')
         profile, created = Profile.objects.update_or_create(
             user=user,
-            defaults=validated_data
+            **validated_data
         )
         return profile
