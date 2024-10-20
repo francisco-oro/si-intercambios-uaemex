@@ -60,7 +60,7 @@ class ProfileSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Profile
-        fields = ['user', 'CURP', 'gender', 'date_of_birth', 'city', 'zip_code']
+        fields = ['id', 'user', 'CURP', 'gender', 'date_of_birth', 'city', 'zip_code']
     #
     # def validate_user(self, value):
     #     user = get_user_model().Objects.get(pk=value)

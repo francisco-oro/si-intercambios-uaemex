@@ -41,6 +41,7 @@ class ProfileSerializerTest(TestCase):
             password='testpass123',
         )
         self.profile_data = {
+            'user': self.user.id,
             'CURP': "ABCD123456EFGHIJKL",
             'gender': "M",
             'date_of_birth': "1990-01-01",
