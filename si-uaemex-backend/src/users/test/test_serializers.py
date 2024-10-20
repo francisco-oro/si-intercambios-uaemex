@@ -63,7 +63,10 @@ class ProfileSerializerTest(TestCase):
 
     """Test that validation fails when an invalid string is provided as gender"""
     def test_invalid_gender(self):
-        pass
+        self.profile_data['gender'] = 'bi'
+        serializer = ProfileSerializer(data=self.profile_data, context=self.context)
+        # Assert
+        self.assertFalse(serializer.is_valid())
 
     def test_underage_date_of_birth(self):
         today = date.today()
