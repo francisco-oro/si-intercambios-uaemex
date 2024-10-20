@@ -4,9 +4,9 @@ from rest_framework.decorators import action
 from rest_framework.response import Response
 from rest_framework import status
 
-from src.users.models import User
+from src.users.models import User, Profile
 from src.users.permissions import IsUserOrReadOnly
-from src.users.serializers import CreateUserSerializer, UserSerializer
+from src.users.serializers import CreateUserSerializer, UserSerializer, ProfileSerializer
 
 
 class UserViewSet(mixins.RetrieveModelMixin, mixins.UpdateModelMixin, mixins.CreateModelMixin, viewsets.GenericViewSet):
@@ -31,3 +31,12 @@ class UserViewSet(mixins.RetrieveModelMixin, mixins.UpdateModelMixin, mixins.Cre
             return Response(UserSerializer(self.request.user, context={'request': self.request}).data, status=status.HTTP_200_OK)
         except Exception as e:
             return Response({'error': 'Wrong auth token' + e}, status=status.HTTP_400_BAD_REQUEST)
+
+
+class ProfileViewSet(mixins.RetrieveModelMixin, mixins.UpdateModelMixin, mixins.CreateModelMixin, viewsets.GenericViewSet):
+    """
+    Creates, updated and Retrieves - User Profiles
+    """
+    queryset = Profile.objects.all()
+    serializer_class = ProfileSerializer
+    permission_classes = (IsUserOrReadOnly,)

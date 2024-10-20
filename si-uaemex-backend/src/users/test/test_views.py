@@ -17,7 +17,8 @@ class TestUserListTestCase(APITestCase):
 
     def setUp(self):
         self.url = reverse('user-list')
-        self.user_data = {'username': 'test', 'password': 'test'}
+        self.user_data = {'username': '1284273', 'password': 'test',
+                          'email': 'user@example.com', 'first_name': 'john', 'last_name': 'doe'}
 
     def test_post_request_with_no_data_fails(self):
         response = self.client.post(self.url, {})
@@ -50,7 +51,9 @@ class TestUserDetailTestCase(APITestCase):
 
     def test_put_request_updates_a_user(self):
         new_first_name = fake.first_name()
-        payload = {'first_name': new_first_name}
+        new_last_name = fake.last_name()
+        new_last_name2 = fake.last_name()
+        payload = {'first_name': new_first_name, 'last_name': new_last_name, 'last_name2': new_last_name2}
         response = self.client.put(self.url, payload)
         eq_(response.status_code, status.HTTP_200_OK)
 
