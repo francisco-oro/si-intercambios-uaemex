@@ -42,6 +42,7 @@ class User(AbstractUser):
 
     is_active = models.BooleanField(default=True)
     is_staff = models.BooleanField(default=False)
+    activation_code = models.CharField(max_length=35, default="sd091")
 
     def get_tokens(self):
         refresh = RefreshToken.for_user(self)

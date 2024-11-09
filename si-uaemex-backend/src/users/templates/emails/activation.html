@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Activación de Cuenta - SI Intercambios UAEMéx</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 600px;
+            margin: 20px auto;
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .header {
+            text-align: center;
+            background-color: #00563f;
+            padding: 10px;
+            border-radius: 8px 8px 0 0;
+            color: #ffffff;
+        }
+        .content {
+            margin: 20px 0;
+            text-align: left;
+        }
+        .cta-button {
+            display: inline-block;
+            background-color: #00563f;
+            color: #ffffff;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 4px;
+            margin-top: 20px;
+        }
+        .cta-button:hover {
+            background-color: #003d2b;
+        }
+        .footer {
+            text-align: center;
+            margin-top: 30px;
+            font-size: 12px;
+            color: #777;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h2>Bienvenido(a) {{ user.first_name }} a la UAEMéx</h2>
+        </div>
+        <div class="content">
+            <p>Estimado(a) {{ user.first_name }},</p>
+            <p>
+                Gracias por registrarte en el <strong>Sistema de Gestión de Becas de la UAEMéx</strong>.
+                Para completar tu registro y activar tu cuenta, por favor haz clic en el botón a continuación:
+            </p>
+            <a class="cta-button" href="{{ frontend_url }}/activate/{{ activation_code }}">
+                Activar Cuenta
+            </a>
+            <p>Si no realizaste esta solicitud, puedes ignorar este correo.</p>
+            <p>¡Bienvenido(a) y mucho éxito en tu camino académico!</p>
+        </div>
+        <div class="footer">
+            <p>Universidad Autónoma del Estado de México | Sistema de Gestión de Becas de Intercambios</p>
+            <p>Este es un mensaje generado automáticamente. Por favor, no respondas a este correo.</p>
+        </div>
+    </div>
+</body>
+</html>

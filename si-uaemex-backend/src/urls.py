@@ -17,7 +17,7 @@ from src.files.urls import files_router
 from src.users.urls import users_router
 
 schema_view = get_schema_view(
-    openapi.Info(title="Pastebin API", default_version='v1'),
+    openapi.Info(title="SI Intercambios UAEMéx Back-End", default_version='v1'),
     public=True,
 )
 

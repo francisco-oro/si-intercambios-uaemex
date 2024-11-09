@@ -76,10 +76,13 @@ ROOT_URLCONF = 'src.urls'
 WSGI_APPLICATION = 'src.wsgi.application'
 
 # Email
-EMAIL_BACKEND = os.getenv('EMAIL_BACKEND', 'django.core.mail.backends.smtp.EmailBackend')
-EMAIL_HOST = os.getenv('EMAIL_HOST', 'localhost')
-EMAIL_PORT = os.getenv('EMAIL_PORT', 1025)
-EMAIL_FROM = os.getenv('EMAIL_FROM', 'noreply@somehost.local')
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = os.getenv('EMAIL_HOST', 'smtp.gmail.com')  # For Gmail
+EMAIL_PORT = int(os.getenv('EMAIL_PORT', 587))  # For TLS
+EMAIL_USE_TLS = True
+EMAIL_HOST_USER = os.getenv('EMAIL_HOST_USER')  # Your email address
+EMAIL_HOST_PASSWORD = os.getenv('EMAIL_HOST_PASSWORD')  # Your email password/app password
+DEFAULT_FROM_EMAIL = os.getenv('DEFAULT_FROM_EMAIL')
 
 # Celery
 BROKER_URL = os.getenv('BROKER_URL', 'redis://redis:6379')
@@ -202,8 +205,14 @@ LOGGING = {
             'class': 'logging.StreamHandler',
             'formatter': 'django.server',
         },
-        'console': {'level': 'DEBUG', 'class': 'logging.StreamHandler', 'formatter': 'simple'},
+        'console': {'level': 'INFO', 'class': 'logging.StreamHandler', 'formatter': 'simple'},
         'mail_admins': {'level': 'ERROR', 'class': 'django.utils.log.AdminEmailHandler'},
+        'file': {
+            'level': 'DEBUG',
+            'class': 'logging.FileHandler',
+            'filename': 'debug.log',
+            'formatter': 'verbose',
+        },
     },
     'loggers': {
         'django': {
@@ -221,6 +230,16 @@ LOGGING = {
             'propagate': False,
         },
         'django.db.backends': {'handlers': ['console'], 'level': 'INFO'},
+        'src.users': {
+            'handlers': ['file', 'console'],
+            'level': 'DEBUG',
+            'propagate': True,
+        },
+        'src.common': {
+            'handlers': ['file', 'console'],
+            'level': 'DEBUG',
+            'propagate': True,
+        },
     },
 }
 

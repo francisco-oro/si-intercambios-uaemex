@@ -8,6 +8,11 @@ from src.users.models import User, Profile
 from src.users.permissions import IsUserOrReadOnly
 from src.users.serializers import CreateUserSerializer, UserSerializer, ProfileSerializer
 
+from src.common.events import EventHandler
+
+import logging
+
+logger = logging.getLogger(__name__)
 
 class UserViewSet(mixins.RetrieveModelMixin, mixins.UpdateModelMixin, mixins.CreateModelMixin, viewsets.GenericViewSet):
     """
@@ -24,6 +29,20 @@ class UserViewSet(mixins.RetrieveModelMixin, mixins.UpdateModelMixin, mixins.Cre
     def get_permissions(self):
         self.permission_classes = self.permissions.get(self.action, self.permissions['default'])
         return super().get_permissions()
+
+    def perform_create(self, serializer):
+        logger.info("Creating new user")
+        try:
+            user = serializer.save()
+            logger.info(f"User created successfully: {user.email}")
+
+            # Dispatch the user_created event
+            logger.debug(f"Dispatching user_created event for user: {user.email}")
+            EventHandler.dispatch('user_created', user)
+
+        except Exception as e:
+            logger.error(f"Error during user creation: {str(e)}")
+            raise
 
     @action(detail=False, methods=['get'], url_path='me', url_name='me')
     def get_user_data(self, instance):
