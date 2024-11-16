@@ -83,6 +83,11 @@ EMAIL_USE_TLS = True
 EMAIL_HOST_USER = os.getenv('EMAIL_HOST_USER')  # Your email address
 EMAIL_HOST_PASSWORD = os.getenv('EMAIL_HOST_PASSWORD')  # Your email password/app password
 DEFAULT_FROM_EMAIL = os.getenv('DEFAULT_FROM_EMAIL')
+EMAIL_FROM = os.getenv('DEFAULT_FROM_EMAIL')
+
+
+# Frontend
+FRONTEND_URL = os.getenv('FRONTED_URL', 'http://localhost:8000')
 
 # Celery
 BROKER_URL = os.getenv('BROKER_URL', 'redis://redis:6379')

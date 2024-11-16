@@ -1,6 +1,7 @@
 import logging
 
 import os
+from django.conf import settings
 from django.core.mail import send_mail
 from django.template.loader import render_to_string
 from django.utils.crypto import get_random_string
@@ -9,6 +10,31 @@ logger = logging.getLogger(__name__)
 
 
 class EmailService:
+
+    @staticmethod
+    def send_password_reset_email(user, reset_password_token):
+        """
+        Send password reset email to user with reset token
+        """
+        context = {
+            'current_user': user,
+            'username': user.username,
+            'email': user.email,
+            'reset_password_url': f"{settings.FRONTEND_URL}/reset-password?token={reset_password_token.key}"
+        }
+
+        # Render email templates
+        email_html_message = render_to_string('emails/user_reset_password.html', context)
+
+        send_mail(
+            subject="Password Reset for Your Account",
+            message=email_html_message,
+            from_email=os.getenv('EMAIL_FROM_ADDRESS', settings.DEFAULT_FROM_EMAIL),
+            recipient_list=[user.email],
+            html_message=email_html_message,
+            fail_silently=False,
+        )
+
     @staticmethod
     def send_activation_email(user):
         logger.info(f"Preparing activation email for user: {user.email}")
