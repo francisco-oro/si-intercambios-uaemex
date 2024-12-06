@@ -52,6 +52,7 @@ INSTALLED_APPS = (
     'src.social',
     'src.files',
     'src.common',
+    'src.convocatorias',
     # Third party optional apps
     # app must be placed somewhere after all the apps that are going to be generating activities
     # 'actstream',                  # activity stream
@@ -92,7 +93,6 @@ FRONTEND_URL = os.getenv('FRONTED_URL', 'http://localhost:8000')
 # Celery
 BROKER_URL = os.getenv('BROKER_URL', 'redis://redis:6379')
 CELERY_RESULT_BACKEND = os.getenv('CELERY_RESULT_BACKEND', 'redis://redis:6379')
-
 ADMINS = ()
 
 # Sentry

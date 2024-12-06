@@ -4,12 +4,55 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="977bed1c-44ef-41ca-9dfa-0a06f2bafbab" name="Changes" comment="Added activation email settings for si-intercambios-uaemex.iml">
+    <list default="true" id="977bed1c-44ef-41ca-9dfa-0a06f2bafbab" name="Changes" comment="Addedd EMAIL_FROM and FRONTED_URL setup in common settings&#10;Added send password reset email to EmailService class&#10;&#10;Updated user reset password email template &#10;&#10;Fixed permissions issue on Profile ViewSet">
+      <change afterPath="$PROJECT_DIR$/si-uaemex-backend/src/convocatorias/models.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/si-uaemex-backend/src/convocatorias/tests.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/si-uaemex-backend/src/convocatorias/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/.dockerignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/.idea/backend.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/.idea/inspectionProfiles/profiles_settings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/Dockerfile" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/app/.flake8" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/app/app/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/si-uaemex-backend/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/app/app/asgi.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/app/app/settings.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/app/app/urls.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/app/app/wsgi.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/app/core/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/si-uaemex-backend/src/convocatorias/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/app/core/admin.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/app/core/apps.py" beforeDir="false" afterPath="$PROJECT_DIR$/si-uaemex-backend/src/convocatorias/apps.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/app/core/management/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/si-uaemex-backend/src/convocatorias/migrations/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/app/core/management/commands/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/app/core/management/commands/wait_for_db.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/app/core/migrations/0001_initial.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/app/core/migrations/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/app/core/models.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/app/core/tests/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/app/core/tests/test_admin.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/app/core/tests/test_commands.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/app/core/tests/test_models.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/app/core/views.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/app/manage.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/app/user/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/app/user/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/si-uaemex-backend/src/convocatorias/admin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/app/user/apps.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/app/user/migrations/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/app/user/models.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/app/user/serializers.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/app/user/tests/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/app/user/tests/test_user_api.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/app/user/urls.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/app/user/views.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/requirements.dev.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/requirements.txt" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/si-uaemex-backend/src/config/common.py" beforeDir="false" afterPath="$PROJECT_DIR$/si-uaemex-backend/src/config/common.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/si-uaemex-backend/src/users/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/si-uaemex-backend/src/users/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/si-uaemex-backend/src/users/services.py" beforeDir="false" afterPath="$PROJECT_DIR$/si-uaemex-backend/src/users/services.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/si-uaemex-backend/src/users/templates/emails/user_reset_password.html" beforeDir="false" afterPath="$PROJECT_DIR$/si-uaemex-backend/src/users/templates/emails/user_reset_password.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -23,8 +66,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Dockerfile" />
-        <option value="Python Script" />
         <option value="HTML File" />
+        <option value="Python Script" />
       </list>
     </option>
   </component>
@@ -60,6 +103,8 @@
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$USER_HOME$/.cache/JetBrains/PyCharm2024.1/remote_sources/-790739215/-853142959/unittest/mock.py" root0="SKIP_INSPECTION" />
     <setting file="file://$USER_HOME$/.cache/JetBrains/PyCharm2024.1/remote_sources/-790739215/545756923/django/core/management/base.py" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/si-uaemex-backend/convocatorias/admin.py" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/si-uaemex-backend/convocatorias/models.py" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="JsbtTreeLayoutManager">
     <layout place="tools.popupGrunt">
@@ -78,35 +123,36 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
-    &quot;Django tests.Test: core.tests.test_commands.CommandsTests.test_wait_for_db_ready.executor&quot;: &quot;Run&quot;,
-    &quot;Django tests.Test: core.tests.test_models.ModelTests.test_new_user_email_normalized.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.OpenDjangoStructureViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.pycharm.django.structure.promotion.once.per.project&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/home/franciscooro/PycharmProjects/si-intercambios-uaemex/si-uaemex-backend/docker-compose.yml&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.stylelint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.stylelint&quot;: &quot;&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;run.code.analysis.last.selected.profile&quot;: &quot;aDefault&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.lookFeel&quot;,
-    &quot;ts.external.directory.path&quot;: &quot;/home/franciscooro/PycharmProjects/si-intercambios-uaemex/si-uaemex-frontend/node_modules/typescript/lib&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "DefaultHtmlFileTemplate": "HTML File",
+    "Django tests.Test: core.tests.test_commands.CommandsTests.test_wait_for_db_ready.executor": "Run",
+    "Django tests.Test: core.tests.test_models.ModelTests.test_new_user_email_normalized.executor": "Run",
+    "RunOnceActivity.OpenDjangoStructureViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "RunOnceActivity.pycharm.django.structure.promotion.once.per.project": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "git-widget-placeholder": "main",
+    "last_opened_file_path": "/home/franciscooro/PycharmProjects/si-intercambios-uaemex/si-uaemex-backend",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.stylelint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.stylelint": "",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "run.code.analysis.last.selected.profile": "aDefault",
+    "settings.editor.selected.configurable": "preferences.lookFeel",
+    "ts.external.directory.path": "/home/franciscooro/PycharmProjects/si-intercambios-uaemex/si-uaemex-frontend/node_modules/typescript/lib",
+    "vue.rearranger.settings.migration": "true"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;DatabaseDriversLRU&quot;: [
-      &quot;postgresql&quot;
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "postgresql"
     ]
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/si-uaemex-backend" />
@@ -114,11 +160,11 @@
       <recent name="$PROJECT_DIR$/frontend/src/app/tenant/search" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/si-uaemex-backend/src" />
       <recent name="$PROJECT_DIR$/si-uaemex-backend/src/users/templates/emails" />
       <recent name="$PROJECT_DIR$/backend/app/core/management" />
       <recent name="$PROJECT_DIR$/backend" />
       <recent name="$PROJECT_DIR$/frontend/src/assets/img" />
-      <recent name="$PROJECT_DIR$/.github/workflows" />
     </key>
   </component>
   <component name="RunManager" selected="Django tests.Test: core.tests.test_models.ModelTests.test_new_user_email_normalized">
@@ -176,8 +222,8 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-js-predefined-1d06a55b98c1-0b3e54e931b4-JavaScript-PY-241.18034.82" />
-        <option value="bundled-python-sdk-975db3bf15a3-2767605e8bc2-com.jetbrains.pycharm.pro.sharedIndexes.bundled-PY-241.18034.82" />
+        <option value="bundled-js-predefined-d6986cc7102b-e768b9ed790e-JavaScript-PY-243.21565.199" />
+        <option value="bundled-python-sdk-cab1f2013843-4ae2d6a61b08-com.jetbrains.pycharm.pro.sharedIndexes.bundled-PY-243.21565.199" />
       </set>
     </attachedChunks>
   </component>
@@ -211,7 +257,9 @@
       <workItem from="1726941609733" duration="560000" />
       <workItem from="1729390910675" duration="120000" />
       <workItem from="1731126523478" duration="5107000" />
-      <workItem from="1731728631923" duration="6424000" />
+      <workItem from="1731728631923" duration="9913000" />
+      <workItem from="1732159932446" duration="2000" />
+      <workItem from="1733525297975" duration="116000" />
     </task>
     <task id="LOCAL-00001" summary="Added .flake8 for linting">
       <option name="closed" value="true" />
@@ -413,7 +461,15 @@
       <option name="project" value="LOCAL" />
       <updated>1731130920171</updated>
     </task>
-    <option name="localTasksCounter" value="26" />
+    <task id="LOCAL-00026" summary="Addedd EMAIL_FROM and FRONTED_URL setup in common settings&#10;Added send password reset email to EmailService class&#10;&#10;Updated user reset password email template &#10;&#10;Fixed permissions issue on Profile ViewSet">
+      <option name="closed" value="true" />
+      <created>1731735926061</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1731735926061</updated>
+    </task>
+    <option name="localTasksCounter" value="27" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -434,7 +490,6 @@
     <ignored-roots>
       <path value="$PROJECT_DIR$/frontend" />
     </ignored-roots>
-    <MESSAGE value="Added .flake8 for linting" />
     <MESSAGE value="Configure backend work flow for github actions" />
     <MESSAGE value="Added menubar display" />
     <MESSAGE value="Added ExtratInformation for Search Logic in navbar component" />
@@ -459,7 +514,8 @@
     <MESSAGE value="fixed changes made" />
     <MESSAGE value="integration tests by mk1 user" />
     <MESSAGE value="Added activation email settings for si-intercambios-uaemex.iml" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added activation email settings for si-intercambios-uaemex.iml" />
+    <MESSAGE value="Addedd EMAIL_FROM and FRONTED_URL setup in common settings&#10;Added send password reset email to EmailService class&#10;&#10;Updated user reset password email template &#10;&#10;Fixed permissions issue on Profile ViewSet" />
+    <option name="LAST_COMMIT_MESSAGE" value="Addedd EMAIL_FROM and FRONTED_URL setup in common settings&#10;Added send password reset email to EmailService class&#10;&#10;Updated user reset password email template &#10;&#10;Fixed permissions issue on Profile ViewSet" />
   </component>
   <component name="WfRunsListSearchHistory">{
   &quot;history&quot;: [

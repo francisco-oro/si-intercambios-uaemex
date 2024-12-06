@@ -1,0 +1,81 @@
+/* !! BOTONES */
+.blue-btn {
+    background-color: var(--green);
+    border-color: var(--dark-green);
+    color: var(--white);
+    font-weight: bold;
+}
+
+.orange-btn {
+    background-color: var(--gold);
+    border-color: var(--gold-dark);
+    color: var(--white);
+    font-weight: bold;
+}
+
+.orange-btn:hover {
+    background-color: var(--white);
+    color: var(--gold);
+    border-color: var(--gold);
+}
+
+.green-btn {
+    background-color: var(--light-green);
+    border-color: var(--green);
+    color: var(--dark-green);
+    font-weight: bold;
+    padding: 6px 20px;
+}
+
+.closingX {
+    padding: 0;
+    font-size: 16px;
+    color: #C21F1F; /* Soft red for warnings */
+    font-weight: bold;
+    margin-top: -20px;
+}
+
+/* !! Formularios */
+.form-container {
+    width: 100%;
+    margin-top: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group {
+    margin-bottom: 8px;
+    width: 100%;
+}
+
+.input {
+    padding: 5px 8px;
+    border-width: 1px;
+    border-style: solid;
+    border-color: var(--light-gray);
+    border-radius: 4px;
+    font-size: 0.9em;
+    height: 35px;
+    width: 100%;
+    outline: none;
+    transition: border-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.input:focus {
+    border-color: var(--green);
+    box-shadow: 0 0 5px rgba(0, 104, 55, 0.5); /* Green glow */
+}
+
+.error {
+    color: #C21F1F; /* Soft red for errors */
+    font-size: 0.75em;
+    margin-top: 2px;
+}

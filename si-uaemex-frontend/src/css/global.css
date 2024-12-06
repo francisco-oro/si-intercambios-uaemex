@@ -1,0 +1,25 @@
+:root {
+    /* Light Theme Colors */
+    --green: #006837; /* UAEMéx Green */
+    --light-green: #DFF2EB; /* Light Green for soft backgrounds */
+    --gold: #F1C232; /* UAEMéx Gold */
+    --dark-green: #004225; /* Dark Green for text and accents */
+    --white: #FFFFFF; /* Neutral White */
+    --light-gray: #F5F5F5; /* Light Gray for subtle backgrounds */
+
+    /* Dark Theme Colors */
+    --dark-gray: #333333; /* Dark Neutral */
+    --gold-dark: #C6A72D; /* Darker gold for contrast */
+  }
+
+.global-bg-light {
+    background-color: var(--light-green);
+}
+
+.global-bg-dark {
+    background-color: var(--dark-gray);
+}
+
+.adminWrappersBg {
+    background-color: var(--dark-green);
+}
