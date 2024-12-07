@@ -55,7 +55,7 @@ export const authSlice = createSlice({
 export const { setUserToken, clearUserToken, updateAuthState,setIsUserAllowed, setErrorLogin, setDecodedData } = authSlice.actions;
 
 export const authenticationThunk = (userCredentials, successMsg) => dispatch => {
-    axios.post(Connection + 'tokens', userCredentials)
+    axios.post(Connection + 'token/', userCredentials)
      .then(res => {
          const newToken = res.data.access;
          dispatch(updateAuthState({ token: newToken }));

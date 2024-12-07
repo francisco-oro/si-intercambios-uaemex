@@ -15,9 +15,9 @@ const LoginForm = () => {
   const [focusedInput, setFocusedInput] = useState(null);
   const [isVisible, setIsVisible] = useState(false);
 
-  const onSubmit = ({ email, password }) => {
+  const onSubmit = ({ username, password }) => {
     const successMsg = t('logInSuccess');
-    const userCredentials = { email, password };
+    const userCredentials = { username, password };
     dispatch(authenticationThunk(userCredentials, successMsg));
     navigate('/');
     reset();
@@ -38,7 +38,7 @@ const LoginForm = () => {
           <input
             type="text"
             placeholder={t('Número de cuenta')}
-            {...register('emailRequired', { required: t('emailRequired') })}
+            {...register('username', { required: t('emailRequired') })}
             className={`input ${focusedInput === 'username' ? 'input-focus' : ''}`}
             onFocus={() => setFocusedInput('username')}
             onBlur={() => setFocusedInput(null)}
