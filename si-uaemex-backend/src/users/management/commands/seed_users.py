@@ -72,7 +72,7 @@ class Command(BaseCommand):
 
         admin_users = [
             {
-                'username': 'director',
+                'username': 'admin',
                 'email': 'admin@example.com',
                 'password': 'adminpass123',
                 'first_name': 'Admin',
@@ -103,6 +103,9 @@ class Command(BaseCommand):
 
                     if created:
                         user.set_password(admin_data['password'])
+                        user.is_active = True
+                        user.is_staff = True
+                        user.is_superuser = True
                         user.save()
 
                         # Update the automatically created profile

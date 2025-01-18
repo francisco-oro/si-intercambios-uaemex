@@ -1,4 +1,6 @@
 from django.core.management.base import BaseCommand
+from django.core.files.base import ContentFile
+from django.core.files.uploadedfile import SimpleUploadedFile
 from django.contrib.auth import get_user_model
 from src.convocatorias.models import (
     ScholarshipCategory,
@@ -14,6 +16,12 @@ from src.users.models import Profile
 from django.utils import timezone
 from datetime import timedelta
 import random
+from faker import Faker
+import requests
+from io import BytesIO
+from PIL import Image
+import os
+from django.conf import settings
 
 User = get_user_model()
 
@@ -21,16 +29,100 @@ User = get_user_model()
 class Command(BaseCommand):
     help = 'Seeds the database with convocatorias data'
 
+    def add_arguments(self, parser):
+        parser.add_argument(
+            '--flush',
+            action='store_true',
+            help='Delete existing data before seeding'
+        )
+
     def handle(self, *args, **options):
+        if options['flush']:
+            self.stdout.write('Flushing existing data...')
+            ApplicationDocument.objects.all().delete()
+            Application.objects.all().delete()
+            Scholarship.objects.all().delete()
+            RequiredDocument.objects.all().delete()
+            ScholarshipCategory.objects.all().delete()
+            File.objects.all().delete()
+
         self.stdout.write('Starting convocatorias seeding...')
 
+        # Get or create admin user for file authorship
+        admin_user = User.objects.filter(is_superuser=True).first()
+        if not admin_user:
+            admin_user = User.objects.create_superuser(
+                username='admin',
+                email='admin@example.com',
+                password='adminpass123'
+            )
+
+        self.admin_user = admin_user
+        self.fake = Faker(['es_MX'])
+
+        # Create sample files first
+        self.sample_files = self.create_sample_files()
+
+        # Create other data
         self.seed_scholarship_categories()
-        self.seed_files()
         self.seed_required_documents()
         self.seed_scholarships()
         self.seed_applications()
 
         self.stdout.write(self.style.SUCCESS('Successfully seeded convocatorias data'))
+
+    def create_sample_files(self):
+        """Create sample files of different types"""
+        self.stdout.write('Creating sample files...')
+
+        files = []
+
+        # Create PDF files
+        for i in range(3):
+            pdf_content = SimpleUploadedFile(
+                name=f'sample_doc_{i}.pdf',
+                content=b'%PDF-1.4 Sample PDF content',
+                content_type='application/pdf'
+            )
+            file = File.objects.create(
+                file=pdf_content,
+                author=self.admin_user
+            )
+            files.append(file)
+
+        # Create image files
+        for i in range(3):
+            # Create a simple image
+            image = Image.new('RGB', (800, 600), color='white')
+            image_io = BytesIO()
+            image.save(image_io, format='JPEG')
+
+            image_file = SimpleUploadedFile(
+                name=f'sample_image_{i}.jpg',
+                content=image_io.getvalue(),
+                content_type='image/jpeg'
+            )
+
+            file = File.objects.create(
+                file=image_file,
+                author=self.admin_user
+            )
+            files.append(file)
+
+        # Create document files
+        for i in range(3):
+            doc_content = SimpleUploadedFile(
+                name=f'sample_doc_{i}.docx',
+                content=b'Sample document content',
+                content_type='application/vnd.openxmlformats-officedocument.wordprocessingml.document'
+            )
+            file = File.objects.create(
+                file=doc_content,
+                author=self.admin_user
+            )
+            files.append(file)
+
+        return files
 
     def seed_scholarship_categories(self):
         self.stdout.write('Seeding scholarship categories...')
@@ -58,44 +150,30 @@ class Command(BaseCommand):
             }
         ]
 
+        created_categories = []
         for category_data in categories:
-            ScholarshipCategory.objects.get_or_create(
+            category, created = ScholarshipCategory.objects.get_or_create(
                 name=category_data['name'],
                 defaults={'description': category_data['description']}
             )
+            created_categories.append(category)
 
-    def seed_files(self):
-        self.stdout.write('Seeding files...')
-
-        file_types = ['pdf', 'doc', 'docx']
-        for i in range(1, 6):
-            file_type = random.choice(file_types)
-            File.objects.get_or_create(
-                name=f'Document_{i}',
-                defaults={
-                    'file': f'path/to/sample/file_{i}.{file_type}',
-                    'content_type': f'application/{file_type}',
-                    'size': random.randint(1000, 5000000)
-                }
-            )
+        return created_categories
 
     def seed_required_documents(self):
         self.stdout.write('Seeding required documents...')
 
         documents = [
-            'Passport Copy',
-            'Academic Transcript',
+            'Official Transcript',
+            'Identification Document',
+            'Proof of Income',
             'Recommendation Letter',
-            'Motivation Letter',
+            'Study Plan',
             'Language Certificate',
-            'CV/Resume',
-            'Financial Statement'
+            'Medical Certificate'
         ]
 
-        categories = ScholarshipCategory.objects.all()
-        files = File.objects.all()
-
-        for category in categories:
+        for category in ScholarshipCategory.objects.all():
             # Select 3-5 random documents for each category
             num_docs = random.randint(3, 5)
             selected_docs = random.sample(documents, num_docs)
@@ -105,7 +183,7 @@ class Command(BaseCommand):
                     name=f'{doc_name} - {category.name}',
                     defaults={
                         'category': category,
-                        'file': random.choice(files),
+                        'file': random.choice(self.sample_files),
                         'description': f'Please provide your {doc_name.lower()} according to the specified format.'
                     }
                 )
@@ -113,60 +191,52 @@ class Command(BaseCommand):
     def seed_scholarships(self):
         self.stdout.write('Seeding scholarships...')
 
-        categories = ScholarshipCategory.objects.all()
-        files = File.objects.all()
-
-        # Generate scholarships with different date ranges and statuses
         current_date = timezone.now().date()
 
-        for category in categories:
+        for category in ScholarshipCategory.objects.all():
             # Past scholarship
             start_date = current_date - timedelta(days=random.randint(60, 90))
             end_date = current_date - timedelta(days=random.randint(10, 30))
-            Scholarship.objects.get_or_create(
+
+            Scholarship.objects.create(
                 category=category,
+                convocatoria=random.choice(self.sample_files),
+                description=self.fake.paragraph(),
+                status=ScholarshipStatus.CLOSED,
                 application_start_date=start_date,
-                defaults={
-                    'convocatoria': random.choice(files),
-                    'description': f'Past scholarship for {category.name}',
-                    'status': ScholarshipStatus.CLOSED,
-                    'application_end_date': end_date
-                }
+                application_end_date=end_date
             )
 
             # Current scholarship
             start_date = current_date - timedelta(days=random.randint(5, 15))
             end_date = current_date + timedelta(days=random.randint(15, 30))
-            Scholarship.objects.get_or_create(
+
+            Scholarship.objects.create(
                 category=category,
+                convocatoria=random.choice(self.sample_files),
+                description=self.fake.paragraph(),
+                status=ScholarshipStatus.ACCEPTING_APPLICATIONS,
                 application_start_date=start_date,
-                defaults={
-                    'convocatoria': random.choice(files),
-                    'description': f'Current active scholarship for {category.name}',
-                    'status': ScholarshipStatus.ACCEPTING_APPLICATIONS,
-                    'application_end_date': end_date
-                }
+                application_end_date=end_date
             )
 
             # Future scholarship
             start_date = current_date + timedelta(days=random.randint(15, 30))
             end_date = current_date + timedelta(days=random.randint(45, 60))
-            Scholarship.objects.get_or_create(
+
+            Scholarship.objects.create(
                 category=category,
+                convocatoria=random.choice(self.sample_files),
+                description=self.fake.paragraph(),
+                status=ScholarshipStatus.CLOSED,
                 application_start_date=start_date,
-                defaults={
-                    'convocatoria': random.choice(files),
-                    'description': f'Upcoming scholarship for {category.name}',
-                    'status': ScholarshipStatus.CLOSED,
-                    'application_end_date': end_date
-                }
+                application_end_date=end_date
             )
 
     def seed_applications(self):
         self.stdout.write('Seeding applications...')
 
-        # Get all active scholarships and profiles
-        scholarships = Scholarship.objects.filter(
+        active_scholarships = Scholarship.objects.filter(
             status=ScholarshipStatus.ACCEPTING_APPLICATIONS
         )
         profiles = Profile.objects.all()
@@ -175,25 +245,22 @@ class Command(BaseCommand):
             self.stdout.write(self.style.WARNING('No profiles found. Skipping applications seeding.'))
             return
 
-        for scholarship in scholarships:
+        for scholarship in active_scholarships:
             # Create 3-7 applications per scholarship
             num_applications = random.randint(3, 7)
             selected_profiles = random.sample(list(profiles), min(num_applications, profiles.count()))
 
             for profile in selected_profiles:
-                application, created = Application.objects.get_or_create(
+                application = Application.objects.create(
                     profile=profile,
                     scholarship=scholarship,
-                    defaults={
-                        'status': random.choice(list(ApplicationStatus.values))
-                    }
+                    status=random.choice(list(ApplicationStatus.values))
                 )
 
-                if created:
-                    self.seed_application_documents(application)
+                # Create application documents
+                self.create_application_documents(application)
 
-    def seed_application_documents(self, application):
-        files = File.objects.all()
+    def create_application_documents(self, application):
         required_docs = RequiredDocument.objects.filter(
             category=application.scholarship.category
         )
@@ -201,6 +268,6 @@ class Command(BaseCommand):
         for required_doc in required_docs:
             ApplicationDocument.objects.create(
                 application=application,
-                document_id=random.choice(files),
+                document_id=random.choice(self.sample_files),
                 status=random.choice(list(ApplicationStatus.values))
             )
